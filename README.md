@@ -1,2 +1,2 @@
-This application allows the user to keep track by the hour of whatever the user types into the column that was made using bootstrap. Then also save it is by clicking on the floppy disk button which was made by using the 
+This application allows the user to keep track by the hour of whatever the user types into the column that was made using bootstrap. Then also save it is by clicking on the floppy disk button which was made by using fontawesome. The column even changes color to show if the hour has passed, current and future. The user can also save what they have using local storage.
 https://cassidytrbl.github.io/day-caldendar/

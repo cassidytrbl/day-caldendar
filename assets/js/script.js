@@ -1,5 +1,8 @@
 $(document).ready(function() {
     var currentTime = GetCurrentHour("LT")
+    var displayDate = document.getElementById("currentDay")
+    var NowMoment = moment().format("MMMM Do YYYY");
+    displayDate.innerHTML = NowMoment
     console.log(currentTime)
     var timeMaps = [
         '9:00am',
@@ -12,6 +15,12 @@ $(document).ready(function() {
         '4:00pm',
         '5:00pm',
     ];
+
+    $("#clearFieldsBtn").click(function (event) {
+        event.preventDefault;
+        $("textarea").val("");
+        localStorage.clear();
+    });
 
     $('.save').on('click', function(){
         typing = $(this).siblings('.typing').val();
