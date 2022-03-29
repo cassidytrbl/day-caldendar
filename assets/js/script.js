@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    var currentHour = moment().hour();
+    console.log('currentHour', currentHour)
     var currentTime = GetCurrentHour("LT")
     var displayDate = document.getElementById("currentDay")
     var NowMoment = moment().format("MMMM Do YYYY");
@@ -96,27 +98,26 @@ $(document).ready(function() {
     }
 
     function correctHour(hour)  {
-        console.log(correctHour)
-        console.log(currentTime)
-        console.log(parseHour(currentTime)) 
-     if ( timeMaps.indexOf(hour) < timeMaps.indexOf(currentTime)) {
+        console.log('hour', hour)
+        console.log('currentHour', currentHour) 
+     if (hour < currentHour) {
             return "past";
-        } else if ( timeMaps.indexOf(hour) == timeMaps.indexOf(currentTime)) {
+        } else if (hour === currentHour) {
             return "present";
         } else {
             return "future";
         }
      
     }
-    $('#hour-9').addClass(correctHour('9:00am'));
-    $('#hour-10').addClass(correctHour('10:00am'));
-    $('#hour-11').addClass(correctHour('11:00am'));
-    $('#hour-12').addClass(correctHour('12:00pm'));
-    $('#hour-1').addClass(correctHour('1:00pm'));
-    $('#hour-2').addClass(correctHour('2:00pm'));
-    $('#hour-3').addClass(correctHour('3:00pm'));
-    $('#hour-4').addClass(correctHour('4:00pm'));
-    $('#hour-5').addClass(correctHour('5:00pm'));
+    $('#hour-9').addClass(correctHour(9));
+    $('#hour-10').addClass(correctHour(10));
+    $('#hour-11').addClass(correctHour(11));
+    $('#hour-12').addClass(correctHour(12));
+    $('#hour-1').addClass(correctHour(13));
+    $('#hour-2').addClass(correctHour(14));
+    $('#hour-3').addClass(correctHour(15));
+    $('#hour-4').addClass(correctHour(16));
+    $('#hour-5').addClass(correctHour(17));
 })
 
 $('#hour-9 .typing').val(localStorage.getItem('9 a.m.'));
